@@ -35,4 +35,12 @@ export async function criaNovoContato(page: Page) {
 
     await page.click('button:has-text("Salvar")');
     await expect(page.locator('text=Cadastro salvo com sucesso')).toBeVisible({ timeout: 5000 });
+
+    await page.click('button:has(i.fa-minus-circle)');
+    await page.click('button.swal2-confirm');
+
+    await expect(page.locator('button:has-text("Novo Contato")')).toBeVisible();
+
+
+
 }
